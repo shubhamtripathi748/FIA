@@ -1,3 +1,15 @@
+I’ve attached a PowerPoint presentation that outlines key components of our architecture and the flow of various processes within the FIA Digital Licensing System project. The document includes the following pages:
+
+Architecture Diagram (Draft Version) – This is the initial version of the system architecture. Please review it for any adjustments or suggestions.
+Upload Flow Diagram – Depicts the flow for uploading documents into the system.
+Retrieve Flow Diagram – Shows the flow for retrieving driving license information.
+Purpose of Each AWS Service – A detailed breakdown of the AWS services being used in the architecture, including their roles and purposes.
+Please take a moment to go through the presentation and provide any feedback or concerns. Your insights are valuable for refining the design and ensuring that everything aligns with the project’s goals.
+
+Let me know if you need any further details or have any questions.
+
+
+
 The digital licensing system you're working on is quite comprehensive and involves several key components to ensure both security and scalability for all ASN operations. Here's a breakdown of how to implement the key objectives and technical considerations based on the AWS architecture you've mentioned:
 
 1. Digitizing the ASN Motorsport License Lifecycle
