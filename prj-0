@@ -1,3 +1,28 @@
+@startuml
+
+actor User
+participant IAM
+participant "Security Hub & GuardDuty" as Security
+participant CloudTrail
+participant CloudWatch
+participant "AWS KMS & TLS 1.3" as Encryption
+participant "AWS Config" as Compliance
+
+User -> IAM: Request action (Deploy, Modify Policy, etc.)
+IAM -> IAM: Validate permissions
+IAM -> Security: Monitor for threats
+Security -> CloudTrail: Log activity
+CloudTrail -> CloudWatch: Trigger alerts if anomalies detected
+User -> Encryption: Encrypt data in transit (TLS 1.3) & at rest (AWS KMS)
+Encryption -> User: Secure data storage
+CloudTrail -> Compliance: Check compliance policies
+Compliance -> User: Generate compliance reports
+
+@enduml
+
+
+
+
 1. AWS Landing Zone Implementation
 
 Objective:
