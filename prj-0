@@ -1,3 +1,17 @@
+Please find attached the draft version of the architecture and flow diagrams for review. The presentation includes:
+
+Architecture Diagram (Draft Version) – High-level system architecture.
+ASN Admin Flow Diagram – Overview of the administration process.
+Payment Flow Diagram – Details of the payment workflow.
+Upload Data Flow Diagram – Steps involved in uploading data.
+Retrieve Data Flow Diagram – Process for retrieving stored data.
+AWS Services Overview – Summary of AWS services used in the architecture.
+Kindly review the attached document and share your feedback. Let me know if you need any modifications or additional details.
+
+
+
+---------------------------------
+
 Components in the Payment Flow:
 
 Amazon Route 53: Custom domain routing for payments.fia-licensing.com.
