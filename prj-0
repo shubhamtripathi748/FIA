@@ -1,3 +1,61 @@
+Components in the Payment Flow:
+
+Amazon Route 53: Custom domain routing for payments.fia-licensing.com.
+
+Amazon Cognito: User authentication before payment initiation.
+
+Amazon S3 (Optional): Hosting static payment pages.
+
+Amazon API Gateway: Secure routing of payment requests.
+
+AWS Lambda: Processes payment requests and calls external payment providers.
+
+Third-Party Payment Gateway (Stripe, PayPal, Adyen, etc.): Handles transactions.
+
+Amazon DynamoDB: Stores payment records and transaction statuses.
+
+AWS Step Functions: Orchestrates post-payment workflows (license approval, renewal, etc.).
+
+Amazon SNS: Sends payment confirmation/notification emails or SMS.
+
+High-Level Architecture Flow:
+
+User Access & Authentication:
+
+User visits payments.fia-licensing.com (routed via Route 53).
+
+Logs in using Amazon Cognito (OAuth/JWT token authentication).
+
+Payment Request Handling:
+
+API Gateway validates token via Cognito.
+
+API Gateway triggers AWS Lambda to process the payment.
+
+Payment Processing:
+
+Lambda sends the request to an external Payment Gateway (Stripe, PayPal, etc.).
+
+The Payment Gateway returns a success/failure response.
+
+Transaction Status Update & Notifications:
+
+Lambda updates DynamoDB with the payment status.
+
+If successful, SNS sends a confirmation email/SMS.
+
+Post-Payment Processing:
+
+Step Functions orchestrate next steps:
+
+If approved, proceed with license issuance.
+
+If failed, notify the user for retry.
+
+
+
+
+
 1️⃣ ASN Admin logs into the system via Route 53 using their Cognito credentials.
 2️⃣ API Gateway validates the request and token.
 3️⃣ Step Functions orchestrates the process:
