@@ -1,3 +1,17 @@
+1️⃣ ASN Admin logs into the system via Route 53 using their Cognito credentials.
+2️⃣ API Gateway validates the request and token.
+3️⃣ Step Functions orchestrates the process:
+
+Retrieves pending license requests from DynamoDB (ElastiCache read replica first).
+Displays the list of requests in the admin portal.
+4️⃣ Admin reviews the license request and takes action (Approve/Reject).
+5️⃣ Approval/Rejection triggers a Lambda function to update the request status in DynamoDB.
+6️⃣ SNS Notification is sent to the user about their application status.
+7️⃣ If approved, the system queues the digital license generation process using SQS for async processing.
+
+
+
+
 
 Could you please add the flow the ASN admin to access the system for approval for the user's licence request. Also let me know the payment method integration in the architecture
 
